@@ -12,8 +12,8 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'docs',
-    emptyOutDir: false, // Don't clear - we want both builds in docs
+    outDir: 'dist',
+    emptyOutDir: false, // Don't clear - we want both builds in dist
     lib: {
       entry: path.resolve(__dirname, 'src/web-component.tsx'),
       name: 'NexaCoreAd',
