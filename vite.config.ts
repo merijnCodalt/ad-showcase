@@ -20,10 +20,20 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    outDir: 'docs',
+    emptyOutDir: true,
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        'nexacore-ad': path.resolve(__dirname, 'src/web-component.tsx'),
+      },
       output: {
-        entryFileNames: 'assets/nexacore-ad.js',
-        chunkFileNames: 'assets/nexacore-[hash].js',
+        entryFileNames: (chunkInfo) => {
+          return chunkInfo.name === 'nexacore-ad' 
+            ? 'nexacore-ad.js' 
+            : 'assets/[name]-[hash].js';
+        },
+        chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash][extname]'
       }
     }
