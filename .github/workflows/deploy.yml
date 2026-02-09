@@ -33,7 +33,9 @@ jobs:
       # Build the Web Component bundle (you'll add this script)
       - name: Build widget bundle
         run: npm run build:widget
-
+        env:
+          VITE_WIDGET_TAG: ${{ github.event.repository.name }}
+          
       # Prepare a Pages folder with widget.js at the root
       - name: Prepare Pages output
         run: |
