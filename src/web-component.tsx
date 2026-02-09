@@ -36,8 +36,10 @@ class NexaCoreAdElement extends HTMLElement {
 }
 
 // Register the custom element
-if (!customElements.get('nexacore-ad')) {
-  customElements.define('nexacore-ad', NexaCoreAdElement);
+const TAG_NAME = import.meta.env.VITE_WIDGET_TAG || 'nexacore-ad';
+
+if (!customElements.get(TAG_NAME)) {
+  customElements.define(TAG_NAME, NexaCoreAdElement);
 }
 
 export { NexaCoreAdElement };
