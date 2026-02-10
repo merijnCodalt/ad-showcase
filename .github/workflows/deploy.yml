@@ -34,7 +34,7 @@ jobs:
       - name: Build widget bundle
         run: npm run build:widget
         env:
-          VITE_WIDGET_TAG: ${{ github.event.repository.name }}
+          VITE_WIDGET_TAG: lovable-${{ github.repository_id }}
           
       # Prepare a Pages folder with widget.js at the root
       - name: Prepare Pages output
