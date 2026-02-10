@@ -43,4 +43,6 @@ if (!customElements.get(TAG_NAME)) {
   customElements.define(TAG_NAME, WidgetElement);
 }
 
+(window as any).__LOVABLE_WIDGET_TAG__ = TAG_NAME;
+
 export { NexaCoreAdElement };
