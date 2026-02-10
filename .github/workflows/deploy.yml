@@ -53,7 +53,14 @@ jobs:
             <head><meta charset="utf-8"><title>Widget is live</title></head>
             <body>
               <h1>Widget is live</h1>
-              <p>If you can load <code>/widget.js</code>, deployment works.</p>
+              <p>Widget naam: <code id="tag">...</code></p>
+              <p>Widget script: <code>/widget.js</code></p>
+          
+              <script src="./widget.js"></script>
+              <script>
+                document.getElementById('tag').textContent =
+                  window.__LOVABLE_WIDGET_TAG__ || '(onbekend)';
+              </script>
             </body>
           </html>
           EOF
